@@ -150,6 +150,125 @@ async function main() {
     }
   });
 
+  client.on(Events.MessageReactionRemove, async (reaction, user) => {
+    if (reaction.partial) {
+      try {
+        await reaction.fetch();
+      } catch (error) {
+        console.error("Something went wrong when fetching the message:", error);
+        return;
+      }
+    }
+
+    const channel = await reaction.message.channel.fetch();
+
+    if (
+      channel.id == "1006896489089486929" &&
+      reaction.message.id == "1012360723487281153"
+    ) {
+      const guildMember = await reaction.message?.guild?.members.fetch(user.id);
+      const defaultRole = await reaction.message?.guild?.roles.fetch(
+        "1006251927081853038"
+      );
+      switch (reaction.emoji.name) {
+        case "🇷🇴": {
+          guildMember?.roles.remove(
+            (await reaction.message?.guild?.roles.fetch(
+              "1006897148887048313"
+            )) ?? defaultRole!
+          );
+          break;
+        }
+        case "🇨🇳": {
+          guildMember?.roles.remove(
+            (await reaction.message?.guild?.roles.fetch(
+              "1012341901908775003"
+            )) ?? defaultRole!
+          );
+          break;
+        }
+
+        case "🇯🇵": {
+          guildMember?.roles.remove(
+            (await reaction.message?.guild?.roles.fetch(
+              "1012342090493079583"
+            )) ?? defaultRole!
+          );
+          break;
+        }
+
+        case "🇰🇷": {
+          guildMember?.roles.remove(
+            (await reaction.message?.guild?.roles.fetch(
+              "1012342563509903381"
+            )) ?? defaultRole!
+          );
+          break;
+        }
+
+        case "🇷🇺": {
+          guildMember?.roles.remove(
+            (await reaction.message?.guild?.roles.fetch(
+              "1012342777088065628"
+            )) ?? defaultRole!
+          );
+          break;
+        }
+
+        case "🇹🇷": {
+          guildMember?.roles.remove(
+            (await reaction.message?.guild?.roles.fetch(
+              "1012342957925474344"
+            )) ?? defaultRole!
+          );
+          break;
+        }
+
+        case "🇹🇭": {
+          guildMember?.roles.remove(
+            (await reaction.message?.guild?.roles.fetch(
+              "1012343210451931176"
+            )) ?? defaultRole!
+          );
+          break;
+        }
+
+        case "🇪🇸": {
+          guildMember?.roles.remove(
+            (await reaction.message?.guild?.roles.fetch(
+              "1012343524324298834"
+            )) ?? defaultRole!
+          );
+          break;
+        }
+        case "🇮🇹": {
+          guildMember?.roles.remove(
+            (await reaction.message?.guild?.roles.fetch(
+              "1012343606327119943"
+            )) ?? defaultRole!
+          );
+          break;
+        }
+        case "🇵🇱": {
+          guildMember?.roles.remove(
+            (await reaction.message?.guild?.roles.fetch(
+              "1012344079302013050"
+            )) ?? defaultRole!
+          );
+          break;
+        }
+        case "👁️": {
+          guildMember?.roles.remove(
+            (await reaction.message?.guild?.roles.fetch(
+              "1006251927081853038"
+            )) ?? defaultRole!
+          );
+          break;
+        }
+      }
+    }
+  });
+
   client.login(process.env.TOKEN!);
 }
 

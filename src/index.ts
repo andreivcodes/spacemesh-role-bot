@@ -32,13 +32,13 @@ async function main() {
     const channel = await reaction.message.channel.fetch();
 
     if (
-      channel.id == process.env.CHANNEL_ID &&
-      reaction.message.id == process.env.MESSAGE_ID &&
+      channel.id == "935819912520286238" &&
+      reaction.message.id == "935821058072805416" &&
       reaction.emoji.name == "🏴‍☠️"
     ) {
       const guildMember = await reaction.message?.guild?.members.fetch(user.id);
       const role = await reaction.message?.guild?.roles.fetch(
-        process.env.ROLE_ID ?? ""
+        "933676779296657478"
       );
       guildMember?.roles.add(role!);
     }
@@ -48,105 +48,88 @@ async function main() {
       reaction.message.id == "1012360723487281153"
     ) {
       const guildMember = await reaction.message?.guild?.members.fetch(user.id);
-      const defaultRole = await reaction.message?.guild?.roles.fetch(
+      let role = await reaction.message?.guild?.roles.fetch(
         "1006251927081853038"
       );
       switch (reaction.emoji.name) {
         case "🇷🇴": {
-          guildMember?.roles.add(
-            (await reaction.message?.guild?.roles.fetch(
-              "1006897148887048313"
-            )) ?? defaultRole!
+          role = await reaction.message?.guild?.roles.fetch(
+            "1006897148887048313"
           );
           break;
         }
         case "🇨🇳": {
-          guildMember?.roles.add(
-            (await reaction.message?.guild?.roles.fetch(
-              "1012341901908775003"
-            )) ?? defaultRole!
+          role = await reaction.message?.guild?.roles.fetch(
+            "1012341901908775003"
           );
           break;
         }
 
         case "🇯🇵": {
-          guildMember?.roles.add(
-            (await reaction.message?.guild?.roles.fetch(
-              "1012342090493079583"
-            )) ?? defaultRole!
+          role = await reaction.message?.guild?.roles.fetch(
+            "1012342090493079583"
           );
           break;
         }
 
         case "🇰🇷": {
-          guildMember?.roles.add(
-            (await reaction.message?.guild?.roles.fetch(
-              "1012342563509903381"
-            )) ?? defaultRole!
+          role = await reaction.message?.guild?.roles.fetch(
+            "1012342563509903381"
           );
           break;
         }
 
         case "🇷🇺": {
-          guildMember?.roles.add(
-            (await reaction.message?.guild?.roles.fetch(
-              "1012342777088065628"
-            )) ?? defaultRole!
+          role = await reaction.message?.guild?.roles.fetch(
+            "1012342777088065628"
           );
           break;
         }
 
         case "🇹🇷": {
-          guildMember?.roles.add(
-            (await reaction.message?.guild?.roles.fetch(
-              "1012342957925474344"
-            )) ?? defaultRole!
+          role = await reaction.message?.guild?.roles.fetch(
+            "1012342957925474344"
           );
           break;
         }
 
         case "🇹🇭": {
-          guildMember?.roles.add(
-            (await reaction.message?.guild?.roles.fetch(
-              "1012343210451931176"
-            )) ?? defaultRole!
+          role = await reaction.message?.guild?.roles.fetch(
+            "1012343210451931176"
           );
           break;
         }
 
         case "🇪🇸": {
-          guildMember?.roles.add(
-            (await reaction.message?.guild?.roles.fetch(
-              "1012343524324298834"
-            )) ?? defaultRole!
+          role = await reaction.message?.guild?.roles.fetch(
+            "1012343524324298834"
           );
           break;
         }
+
         case "🇮🇹": {
-          guildMember?.roles.add(
-            (await reaction.message?.guild?.roles.fetch(
-              "1012343606327119943"
-            )) ?? defaultRole!
+          role = await reaction.message?.guild?.roles.fetch(
+            "1012343606327119943"
           );
           break;
         }
+
         case "🇵🇱": {
-          guildMember?.roles.add(
-            (await reaction.message?.guild?.roles.fetch(
-              "1012344079302013050"
-            )) ?? defaultRole!
+          role = await reaction.message?.guild?.roles.fetch(
+            "1012344079302013050"
           );
           break;
         }
+
         case "👁️": {
-          guildMember?.roles.add(
-            (await reaction.message?.guild?.roles.fetch(
-              "1006251927081853038"
-            )) ?? defaultRole!
+          role = await reaction.message?.guild?.roles.fetch(
+            "1006251927081853038"
           );
           break;
         }
       }
+
+      guildMember?.roles.add(role!);
     }
   });
 
@@ -167,105 +150,89 @@ async function main() {
       reaction.message.id == "1012360723487281153"
     ) {
       const guildMember = await reaction.message?.guild?.members.fetch(user.id);
-      const defaultRole = await reaction.message?.guild?.roles.fetch(
+
+      let role = await reaction.message?.guild?.roles.fetch(
         "1006251927081853038"
       );
       switch (reaction.emoji.name) {
         case "🇷🇴": {
-          guildMember?.roles.remove(
-            (await reaction.message?.guild?.roles.fetch(
-              "1006897148887048313"
-            )) ?? defaultRole!
+          role = await reaction.message?.guild?.roles.fetch(
+            "1006897148887048313"
           );
           break;
         }
         case "🇨🇳": {
-          guildMember?.roles.remove(
-            (await reaction.message?.guild?.roles.fetch(
-              "1012341901908775003"
-            )) ?? defaultRole!
+          role = await reaction.message?.guild?.roles.fetch(
+            "1012341901908775003"
           );
           break;
         }
 
         case "🇯🇵": {
-          guildMember?.roles.remove(
-            (await reaction.message?.guild?.roles.fetch(
-              "1012342090493079583"
-            )) ?? defaultRole!
+          role = await reaction.message?.guild?.roles.fetch(
+            "1012342090493079583"
           );
           break;
         }
 
         case "🇰🇷": {
-          guildMember?.roles.remove(
-            (await reaction.message?.guild?.roles.fetch(
-              "1012342563509903381"
-            )) ?? defaultRole!
+          role = await reaction.message?.guild?.roles.fetch(
+            "1012342563509903381"
           );
           break;
         }
 
         case "🇷🇺": {
-          guildMember?.roles.remove(
-            (await reaction.message?.guild?.roles.fetch(
-              "1012342777088065628"
-            )) ?? defaultRole!
+          role = await reaction.message?.guild?.roles.fetch(
+            "1012342777088065628"
           );
           break;
         }
 
         case "🇹🇷": {
-          guildMember?.roles.remove(
-            (await reaction.message?.guild?.roles.fetch(
-              "1012342957925474344"
-            )) ?? defaultRole!
+          role = await reaction.message?.guild?.roles.fetch(
+            "1012342957925474344"
           );
           break;
         }
 
         case "🇹🇭": {
-          guildMember?.roles.remove(
-            (await reaction.message?.guild?.roles.fetch(
-              "1012343210451931176"
-            )) ?? defaultRole!
+          role = await reaction.message?.guild?.roles.fetch(
+            "1012343210451931176"
           );
           break;
         }
 
         case "🇪🇸": {
-          guildMember?.roles.remove(
-            (await reaction.message?.guild?.roles.fetch(
-              "1012343524324298834"
-            )) ?? defaultRole!
+          role = await reaction.message?.guild?.roles.fetch(
+            "1012343524324298834"
           );
           break;
         }
+
         case "🇮🇹": {
-          guildMember?.roles.remove(
-            (await reaction.message?.guild?.roles.fetch(
-              "1012343606327119943"
-            )) ?? defaultRole!
+          role = await reaction.message?.guild?.roles.fetch(
+            "1012343606327119943"
           );
           break;
         }
+
         case "🇵🇱": {
-          guildMember?.roles.remove(
-            (await reaction.message?.guild?.roles.fetch(
-              "1012344079302013050"
-            )) ?? defaultRole!
+          role = await reaction.message?.guild?.roles.fetch(
+            "1012344079302013050"
           );
           break;
         }
+
         case "👁️": {
-          guildMember?.roles.remove(
-            (await reaction.message?.guild?.roles.fetch(
-              "1006251927081853038"
-            )) ?? defaultRole!
+          role = await reaction.message?.guild?.roles.fetch(
+            "1006251927081853038"
           );
           break;
         }
       }
+
+      guildMember?.roles.remove(role!);
     }
   });
 

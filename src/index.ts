@@ -128,6 +128,13 @@ async function main() {
           break;
         }
 
+        case "🇮🇱": {
+          role = await reaction.message?.guild?.roles.fetch(
+            "1129001798045286500"
+          );
+          break;
+        }
+
         case "👁️": {
           role = await reaction.message?.guild?.roles.fetch(
             "1006251927081853038"
@@ -234,6 +241,13 @@ async function main() {
         case "🇩🇪": {
           role = await reaction.message?.guild?.roles.fetch(
             "1092392476809121832"
+          );
+          break;
+        }
+
+        case "🇮🇱": {
+          role = await reaction.message?.guild?.roles.fetch(
+            "1129001798045286500"
           );
           break;
         }

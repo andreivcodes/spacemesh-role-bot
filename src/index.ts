@@ -113,9 +113,10 @@ async function updateMemberRole(
   try {
     if (isAdding) {
       await guildMember.roles.add(role);
-      console.error(`Added role ${role} to ${guildMember.nickname}`);
+      console.error(`Added role ${role} to ${guildMember.displayName}`);
     } else {
-      console.error(`Removed role ${role} from ${guildMember.nickname}`);
+      await guildMember.roles.remove(role);
+      console.error(`Removed role ${role} from ${guildMember.displayName}`);
     }
   } catch (error) {
     console.error(`Error ${isAdding ? "adding" : "removing"} role:`, error);

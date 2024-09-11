@@ -4,16 +4,10 @@ COPY . ./app
 
 WORKDIR /app
 
-COPY package.json yarn.lock .yarnrc.yml ./
-COPY .yarn .yarn/
+COPY package.json ./
 
-RUN rm -rf /node_modules
-RUN rm -rf /dist
+RUN yarn
 
-RUN npm install -g corepack@latest && corepack enable
-RUN yarn install --mode=update-lockfile
-RUN yarn install
+RUN npm install -g tsx
 
-RUN yarn build
-
-CMD [ "yarn", "start" ]
+CMD [ "tsx", "src/index.ts" ]

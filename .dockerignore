@@ -1,0 +1,31 @@
+# Ignore .env file
+.env
+
+# Ignore node_modules
+node_modules
+
+# Ignore any log files
+*.log
+
+# Ignore Git and version control files
+.git
+.gitignore
+
+# Ignore development and CI configuration files
+.eslintrc
+.prettierrc
+.vscode
+.github
+
+# Ignore test files
+__tests__
+*.test.js
+*.spec.js
+
+# Ignore documentation
+README.md
+docs
+
+# Ignore build artifacts
+dist
+build
